@@ -4,18 +4,18 @@ using UnityEngine;
 
 public class Mover : MonoBehaviour
 {
-    [SerializeField] float moveSpeed = 10.0f;
+    [SerializeField] float moveSpeed = 15.0f;
 
     // Start is called before the first frame update
     void Start()
     {
-        transform.Translate(1, 0, 0);
+        // transform.Translate(1, 1, 1);
     }
 
     // Update is called once per frame
     void Update()
     {
-        // Make the game framerate independent
+        // Make the game framerate independent with Time.deltaTime
     
         float xValue = Input.GetAxis("Horizontal") * Time.deltaTime * moveSpeed;
         float zValue = Input.GetAxis("Vertical") * Time.deltaTime * moveSpeed;
