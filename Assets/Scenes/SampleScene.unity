@@ -135,6 +135,7 @@ GameObject:
   - component: {fileID: 181131886}
   - component: {fileID: 181131885}
   - component: {fileID: 181131884}
+  - component: {fileID: 181131888}
   m_Layer: 0
   m_Name: Wall (2)
   m_TagString: Untagged
@@ -216,8 +217,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 29.969606}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &181131888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 181131883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8ce9d0d7de67c4ba4a17ce76c40145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eustaceSound: {fileID: 0}
+  audioClip: {fileID: 0}
+  soundPath: 
 --- !u!1 &395726595
 GameObject:
   m_ObjectHideFlags: 0
@@ -230,6 +246,7 @@ GameObject:
   - component: {fileID: 395726598}
   - component: {fileID: 395726597}
   - component: {fileID: 395726596}
+  - component: {fileID: 395726600}
   m_Layer: 0
   m_Name: Wall (3)
   m_TagString: Untagged
@@ -311,8 +328,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 29.854696}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &395726600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 395726595}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8ce9d0d7de67c4ba4a17ce76c40145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eustaceSound: {fileID: 0}
+  audioClip: {fileID: 0}
+  soundPath: 
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -686,7 +718,7 @@ Transform:
   m_LocalScale: {x: 1, y: -0.36643964, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &983335973
 MonoBehaviour:
@@ -701,6 +733,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   moveSpeed: 15
+  body: {fileID: 0}
 --- !u!54 &983335974
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -715,7 +748,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 84
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!1 &1687413262
 GameObject:
@@ -825,6 +858,7 @@ GameObject:
   - component: {fileID: 1729040480}
   - component: {fileID: 1729040479}
   - component: {fileID: 1729040478}
+  - component: {fileID: 1729040482}
   m_Layer: 0
   m_Name: Wall (1)
   m_TagString: Untagged
@@ -906,8 +940,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 29.854696}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 90, z: 0}
+--- !u!114 &1729040482
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1729040477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8ce9d0d7de67c4ba4a17ce76c40145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eustaceSound: {fileID: 0}
+  audioClip: {fileID: 0}
+  soundPath: 
 --- !u!1 &1776176241
 GameObject:
   m_ObjectHideFlags: 0
@@ -920,6 +969,7 @@ GameObject:
   - component: {fileID: 1776176244}
   - component: {fileID: 1776176243}
   - component: {fileID: 1776176242}
+  - component: {fileID: 1776176246}
   m_Layer: 0
   m_Name: Wall
   m_TagString: Untagged
@@ -1001,8 +1051,23 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 29.969606}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1776176246
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1776176241}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d8ce9d0d7de67c4ba4a17ce76c40145, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eustaceSound: {fileID: 0}
+  audioClip: {fileID: 0}
+  soundPath: 
 --- !u!1 &1913553377
 GameObject:
   m_ObjectHideFlags: 3

@@ -11,7 +11,7 @@ public class Mover : MonoBehaviour
     void Start()
     {
         // transform.Translate(1, 1, 1);
-        body =GetComponent<Rigidbody>();
+        body = GetComponent<Rigidbody>();
         PrintInstruction();
     }
 
