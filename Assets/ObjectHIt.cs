@@ -1,6 +1,6 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
 public class ObjectHIt : MonoBehaviour
 {
@@ -26,27 +26,21 @@ public class ObjectHIt : MonoBehaviour
         GetComponent<MeshRenderer>().material.color = Color.red;
     }
 
+    private IEnumerator LoadAudio() {     
+        using (UnityWebRequest www = UnityWebRequestMultimedia.GetAudioClip(soundPath + audioName, AudioType.MPEG))
+        {
+            yield return www.SendWebRequest();
+            audioClip = DownloadHandlerAudioClip.GetContent(www);
 
-    private IEnumerator LoadAudio() {
-        WWW request = GetAudioFromFile(soundPath, audioName);
-        yield return request;
-
-        Debug.Log("audioClip request: " + request);
-
-        audioClip = request.GetAudioClip();
-        audioClip.name = audioName;
-    }
-
-
-    private WWW GetAudioFromFile(string path, string filename)
-    {
-        // string audioToLoad = string.Format(path + "{0}", filename);
-        string audioToLoad = string.Format(path + filename);
-        Debug.Log("audioToLoad: " + audioToLoad);
-
-        Debug.Log(audioToLoad);
-        WWW request = new WWW(audioToLoad);
-        return request;
+            if (www.result == UnityWebRequest.Result.ConnectionError)
+            {
+                Debug.Log(www.error);
+            }
+            else
+            {
+                AudioClip myClip = DownloadHandlerAudioClip.GetContent(www);
+            }
+        }
     }
 
     private void PlayAudioFile()
