@@ -4,15 +4,12 @@ using UnityEngine;
 
 public class Scorer : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    int hitCounter = 0;
 
-    // Update is called once per frame
-    void Update()
-    {
+    private void OnCollisionEnter(Collision other) {
+        hitCounter++;
+        string message = System.String.Format("You have hit this thing {0} times", (hitCounter).ToString());
         
+        Debug.Log(message);
     }
 }
