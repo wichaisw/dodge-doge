@@ -967,7 +967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4e8c6746fd7484c469c99aa4b35fec5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 15
+  moveSpeed: 8
   body: {fileID: 0}
 --- !u!54 &983335974
 Rigidbody:
@@ -1690,6 +1690,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 701868474490732233, guid: 3ed2f52aa28fc8245a915123dd8657cb, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 701868474490732235, guid: 3ed2f52aa28fc8245a915123dd8657cb, type: 3}
       propertyPath: m_RootOrder
       value: 13
