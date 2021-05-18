@@ -15,7 +15,7 @@ public class Dropper : MonoBehaviour
         renderer.enabled = false; 
         rigidbody.useGravity = false;
 
-        timeToWait = Random.Range(2 , 10);
+        timeToWait = Random.Range(2 , 8);
     }
 
     void Update()

@@ -20,10 +20,12 @@ public class ObjectHIt : MonoBehaviour
 
     private void OnCollisionEnter(Collision other)
     {
-        Debug.Log("Wall got bumped");
-        // eustaceSound.Play();
-        PlayAudioFile();
-        GetComponent<MeshRenderer>().material.color = Color.red;
+        if(other.gameObject.tag == "Player")
+        {
+            PlayAudioFile();
+            GetComponent<MeshRenderer>().material.color = Color.red;
+            gameObject.tag = "Hit";
+        }
     }
 
     private IEnumerator LoadAudio() {     

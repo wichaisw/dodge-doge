@@ -23,9 +23,7 @@ public class Mover : MonoBehaviour
 
     void PrintInstruction() 
     {
-        Debug.Log("======================");
         Debug.Log("Welcome to the game");
-        Debug.Log("======================");
         Debug.Log("Press arrow keys or WASD to move around");
         Debug.Log("Btw, don't touch the wall!");
     }
