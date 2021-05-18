@@ -5,15 +5,15 @@ using UnityEngine;
 public class Dropper : MonoBehaviour
 {
     [SerializeField] float timeToWait = 5f;
-    MeshRenderer renderer;
-    Rigidbody rigidbody;
+    MeshRenderer dropperRenderer;
+    Rigidbody rb;
 
     void Start() {
-        renderer = GetComponent<MeshRenderer>();
-        rigidbody = GetComponent<Rigidbody>();
+        dropperRenderer = GetComponent<MeshRenderer>();
+        rb = GetComponent<Rigidbody>();
 
-        renderer.enabled = false; 
-        rigidbody.useGravity = false;
+        dropperRenderer.enabled = false; 
+        rb.useGravity = false;
 
         timeToWait = Random.Range(2 , 8);
     }
@@ -22,8 +22,8 @@ public class Dropper : MonoBehaviour
     {
         if(Time.time > timeToWait) 
         {
-            renderer.enabled = true;
-            rigidbody.useGravity = true;
+            dropperRenderer.enabled = true;
+            rb.useGravity = true;
         }
     }
 }
