@@ -4,7 +4,10 @@ using UnityEngine;
 
 public class Dropper : MonoBehaviour
 {
-    [SerializeField] float timeToWait = 5f;
+    [SerializeField] float timeToWait = 0f;
+    [SerializeField] float timeToWaitRangeStart = 2f;
+    [SerializeField] float timeToWaitRangeEnd = 8f;
+    
     MeshRenderer dropperRenderer;
     Rigidbody rb;
 
@@ -14,8 +17,11 @@ public class Dropper : MonoBehaviour
 
         dropperRenderer.enabled = false; 
         rb.useGravity = false;
+        
+        if(timeToWaitRangeStart != -1) {
+            timeToWait = Random.Range(timeToWaitRangeStart , timeToWaitRangeEnd);
+        }
 
-        timeToWait = Random.Range(2 , 8);
     }
 
     void Update()
