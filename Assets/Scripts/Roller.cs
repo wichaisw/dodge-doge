@@ -10,10 +10,10 @@ public class Roller : MonoBehaviour
     [SerializeField] float xAtStart = -13.8f;
     [SerializeField] float zAtStart = 0;
     [SerializeField] float xSpeed = 1f;
-    [SerializeField] float ySpeed = 1f;
+    [SerializeField] float zSpeed = 1f;
 
 
     void Update() {
-        transform.position = new Vector3((Mathf.PingPong(Time.time * xSpeed, t)  * xLength  + xAtStart), transform.position.y, (Mathf.PingPong(Time.time * ySpeed, t)  * zLength  + zAtStart));
+        transform.position = new Vector3((Mathf.PingPong(Time.time * xSpeed, t)  * xLength  + xAtStart), transform.position.y, (Mathf.PingPong(Time.time * zSpeed, t)  * zLength  + zAtStart));
     }
 }

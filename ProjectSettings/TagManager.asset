@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Floor
   - Hit
+  - GameOverScreen
+  - FollowCamera
   layers:
   - Default
   - TransparentFX
