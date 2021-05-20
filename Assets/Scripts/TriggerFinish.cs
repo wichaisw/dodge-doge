@@ -24,7 +24,7 @@ public class TriggerFinish : MonoBehaviour
             Debug.Log("Finish");
             RemoveObject();
             other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
-            other.gameObject.GetComponent<Rigidbody>().drag = 5;
+            other.gameObject.GetComponent<Rigidbody>().drag = 2;
 
             StartCoroutine(WaitGameOverSprite(1f));
         }
