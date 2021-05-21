@@ -1,8 +1,8 @@
 using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
-
-public class ObjectHIt : MonoBehaviour
+public class PlayEustaceSound : MonoBehaviour
 {
     public const string audioName = "Eustace.mp3";
 
@@ -10,21 +10,21 @@ public class ObjectHIt : MonoBehaviour
     public AudioSource eustaceSound;
     public AudioClip audioClip;
     public string soundPath;
-    // this is a Unity's callback method. Doesn't need to be put in the Update() method.
+    SpriteRenderer gameOverScreen;
 
-    private void Start() {
+    void Start()
+    {
+        // gameOverScreen = GameObject.FindWithTag("GameOverScreen").GetComponent<SpriteRenderer>();
         eustaceSound = gameObject.AddComponent<AudioSource>();
         soundPath = @"file://" + @Application.streamingAssetsPath + "/Sound/";
         StartCoroutine(LoadAudio());
     }
 
-    private void OnCollisionEnter(Collision other)
+    void Update()
     {
-        if(other.gameObject.tag == "Player")
-        {
+        if(gameObject.GetComponent<SpriteRenderer>().enabled == true) {
+            // Debug.Log(gameObject.GetComponent<SpriteRenderer>().enabled);
             PlayAudioFile();
-            GetComponent<MeshRenderer>().material.color = Color.red;
-            gameObject.tag = "Hit";
         }
     }
 
@@ -45,10 +45,9 @@ public class ObjectHIt : MonoBehaviour
         }
     }
 
-    private void PlayAudioFile()
-    {
+        private void PlayAudioFile()
+        {
             eustaceSound.clip = audioClip;
-        eustaceSound.Play();
-    }
-    
+            eustaceSound.Play();
+        }
 }

@@ -26,7 +26,7 @@ public class TriggerFinish : MonoBehaviour
             other.gameObject.GetComponent<Rigidbody>().constraints = RigidbodyConstraints.None;
             other.gameObject.GetComponent<Rigidbody>().drag = 2;
 
-            StartCoroutine(WaitGameOverSprite(1f));
+            StartCoroutine(DestroyObjects());
         }
     }
 
@@ -43,11 +43,28 @@ public class TriggerFinish : MonoBehaviour
         mainCamera.transform.rotation = Quaternion.Euler(gameOverRotation);
     }
 
-    IEnumerator WaitGameOverSprite(float waitTime)
+    void ShowGameOverScreen() 
     {
-        yield return new WaitForSeconds(waitTime);
-
-        gameOverScreen.enabled = true;        
-        ResetCamera();
+        gameOverScreen.enabled = true;
     }
+    IEnumerator DestroyObjects()
+    {
+        ResetCamera();
+        yield return new WaitForSeconds(2f);
+        foreach (GameObject o in Object.FindObjectsOfType<GameObject>()) {
+            if(o.tag == "ToBeDestroy") {
+                Destroy(o);
+            }
+
+            if(o.tag == "Obstacles" || o.tag == "Environment" || o.tag == "Floor" || o.tag == "Hit") {
+                // Destroy(o);
+                o.GetComponent<MeshRenderer>().enabled = false;
+            }
+
+        }
+        
+        ShowGameOverScreen();
+    }
+
+    
 }

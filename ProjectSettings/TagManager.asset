@@ -8,6 +8,9 @@ TagManager:
   - Hit
   - GameOverScreen
   - FollowCamera
+  - Obstacles
+  - Environment
+  - ToBeDestroy
   layers:
   - Default
   - TransparentFX
