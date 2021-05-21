@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using Cinemachine;
-
+using UnityEngine.UI;
 public class TriggerFinish : MonoBehaviour
 {
     GameObject floor;
@@ -11,12 +11,17 @@ public class TriggerFinish : MonoBehaviour
     SpriteRenderer gameOverScreen;
     Vector3 gameOverPosition = new Vector3(-0.35f, 9.18f, -19.65f);
     Vector3 gameOverRotation = new Vector3(13.047f, 0, 0);
+    // public Button RetryButton;
+    public GameObject retryButton;
+
 
     void Start() {
         floor = GameObject.FindWithTag("Floor");
         mainCamera = GameObject.FindWithTag("MainCamera");
         followCamera = GameObject.FindWithTag("FollowCamera").GetComponent<CinemachineVirtualCamera>();
         gameOverScreen = GameObject.FindWithTag("GameOverScreen").GetComponent<SpriteRenderer>();
+        retryButton = GameObject.FindWithTag("RetryButton");
+        
     }
     private void OnCollisionEnter(Collision other) {
         if(other.gameObject.tag == "Player") 
@@ -46,7 +51,11 @@ public class TriggerFinish : MonoBehaviour
     void ShowGameOverScreen() 
     {
         gameOverScreen.enabled = true;
+        // retryButton.SetActive(true);
+        retryButton.GetComponent<Image>().enabled = true;
+        retryButton.GetComponentsInChildren<Text>()[0].enabled = true;
     }
+
     IEnumerator DestroyObjects()
     {
         ResetCamera();
@@ -55,27 +64,14 @@ public class TriggerFinish : MonoBehaviour
         GameObject obstaclesGroup = GameObject.FindGameObjectWithTag("Obstacles");
         GameObject environmentGroup = GameObject.FindGameObjectWithTag("Environment");
         GameObject toBeDestroy = GameObject.FindGameObjectWithTag("ToBeDestroy");
-
+        
         obstaclesGroup.SetActive(false);
         environmentGroup.SetActive(false);
         Destroy(toBeDestroy);
-
-        // foreach (GameObject o in Object.FindObjectsOfType<GameObject>()) {
-        //     if(o.tag == "ToBeDestroy") {
-        //         Destroy(o);
-        //     }
-
-
-
-            // if(o.tag == "Obstacles" || o.tag == "Environment" || o.tag == "Floor" || o.tag == "Hit") {
-            //     // o.GetComponent<MeshRenderer>().enabled = false;
-            //     o
-            // }
-
-        // }
         
         ShowGameOverScreen();
+        
     }
 
-    
+
 }
