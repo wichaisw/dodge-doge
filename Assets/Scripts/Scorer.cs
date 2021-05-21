@@ -8,7 +8,7 @@ public class Scorer : MonoBehaviour
 
     private void OnCollisionEnter(Collision other) {
         
-        if(other.gameObject.tag != "Hit") {
+        if(other.gameObject.tag == "Hit") {
             hitCounter++;
             string message = System.String.Format("You have hit this thing {0} times", (hitCounter).ToString());
             Debug.Log(message);

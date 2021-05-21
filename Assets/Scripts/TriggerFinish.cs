@@ -51,17 +51,28 @@ public class TriggerFinish : MonoBehaviour
     {
         ResetCamera();
         yield return new WaitForSeconds(2f);
-        foreach (GameObject o in Object.FindObjectsOfType<GameObject>()) {
-            if(o.tag == "ToBeDestroy") {
-                Destroy(o);
-            }
 
-            if(o.tag == "Obstacles" || o.tag == "Environment" || o.tag == "Floor" || o.tag == "Hit") {
-                // Destroy(o);
-                o.GetComponent<MeshRenderer>().enabled = false;
-            }
+        GameObject obstaclesGroup = GameObject.FindGameObjectWithTag("Obstacles");
+        GameObject environmentGroup = GameObject.FindGameObjectWithTag("Environment");
+        GameObject toBeDestroy = GameObject.FindGameObjectWithTag("ToBeDestroy");
 
-        }
+        obstaclesGroup.SetActive(false);
+        environmentGroup.SetActive(false);
+        Destroy(toBeDestroy);
+
+        // foreach (GameObject o in Object.FindObjectsOfType<GameObject>()) {
+        //     if(o.tag == "ToBeDestroy") {
+        //         Destroy(o);
+        //     }
+
+
+
+            // if(o.tag == "Obstacles" || o.tag == "Environment" || o.tag == "Floor" || o.tag == "Hit") {
+            //     // o.GetComponent<MeshRenderer>().enabled = false;
+            //     o
+            // }
+
+        // }
         
         ShowGameOverScreen();
     }
