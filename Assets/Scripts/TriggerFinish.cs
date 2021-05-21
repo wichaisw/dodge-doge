@@ -61,9 +61,9 @@ public class TriggerFinish : MonoBehaviour
         ResetCamera();
         yield return new WaitForSeconds(2f);
 
-        GameObject obstaclesGroup = GameObject.FindGameObjectWithTag("Obstacles");
-        GameObject environmentGroup = GameObject.FindGameObjectWithTag("Environment");
-        GameObject toBeDestroy = GameObject.FindGameObjectWithTag("ToBeDestroy");
+        GameObject obstaclesGroup = GameObject.FindWithTag("Obstacles");
+        GameObject environmentGroup = GameObject.FindWithTag("Environment");
+        GameObject toBeDestroy = GameObject.FindWithTag("ToBeDestroy");
         
         obstaclesGroup.SetActive(false);
         environmentGroup.SetActive(false);
